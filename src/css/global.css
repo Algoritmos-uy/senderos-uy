@@ -1,0 +1,150 @@
+/* ...existing code... */
+:root {
+    --color-sky: #7ec8e3;
+    --color-green: #4caf50;
+    --color-slate: #2f3542;
+    --bg: #ffffff;
+    --text: #1b1b1b;
+    --accent: var(--color-sky);
+    --radius: 8px;
+    --container-max: 1100px;
+}
+
+[data-theme="dark"] {
+    --bg: #0f1720;
+    --text: #e6eef6;
+    --accent: #3ea5d6;
+}
+
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial;
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.brand .logo {
+    height: 48px;
+}
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+.main-nav a {
+    text-decoration: none;
+    color: var(--text);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+}
+.main-nav a:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.header-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.btn {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.btn.primary {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+}
+.btn.icon {
+    font-size: 1.1rem;
+}
+
+.hero {
+    padding: 2rem 0;
+    text-align: center;
+}
+.hero img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+/* cards, grid */
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.card {
+    background: rgba(0, 0, 0, 0.03);
+    padding: 1rem;
+    border-radius: var(--radius);
+}
+.media img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+/* contacto */
+.contact-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    margin-bottom: 0.6rem;
+    background: transparent;
+    color: var(--text);
+}
+
+/* footer */
+.site-footer {
+    padding: 1.5rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+/* ...existing code... */
