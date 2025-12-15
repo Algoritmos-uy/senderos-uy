@@ -9,14 +9,27 @@ const main = (function(){
     const nav = document.getElementById('mainNav');
     const navToggle = document.getElementById('navToggle');
     if(!navToggle || !nav) return;
+
+    // inicializar atributos ARIA
+    navToggle.setAttribute('aria-expanded', 'false');
+    nav.setAttribute('data-open', 'false');
+
     navToggle.addEventListener('click', ()=> {
       const shown = nav.getAttribute('data-open') === 'true';
-      nav.setAttribute('data-open', String(!shown));
-      nav.style.display = shown ? '' : 'block';
+      const next = !shown;
+      nav.setAttribute('data-open', String(next));
+      navToggle.setAttribute('aria-expanded', String(next));
+      // toggle clase para estilos visuales en el botón
+      if(next) navToggle.classList.add('open'); else navToggle.classList.remove('open');
+      // dejar que CSS controle el display (no forzamos inline salvo para retrocompatibilidad)
+      if(!next) nav.style.display = ''; else nav.style.display = 'block';
     });
+
     // cerrar al click en enlaces (útil para móviles)
     nav.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=>{
       nav.setAttribute('data-open','false');
+      navToggle.setAttribute('aria-expanded','false');
+      navToggle.classList.remove('open');
       nav.style.display = '';
     }));
   }

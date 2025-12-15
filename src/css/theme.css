@@ -1,0 +1,50 @@
+/* theme.css - variables de diseño y modos de tema (claro/oscuro) */
+:root {
+    --color-sky: #7ec8e3;
+    --color-green: #4caf50;
+    --color-slate: #2f3542;
+    --bg: #ffffff;
+    --text: #1b1b1b;
+    --accent: var(--color-sky);
+    --radius: 8px;
+    --container-max: 1360px;
+}
+
+[data-theme="dark"] {
+    --bg: #0f1720;
+    --text: #e6eef6;
+    --accent: #3ea5d6;
+}
+
+/* Variables adicionales accesibles para futuras ampliaciones */
+/* --gap, --muted, --border-color, etc. */
+:root {
+    --gap: 1rem;
+    --muted: rgba(0, 0, 0, 0.06);
+    --border-color: rgba(0, 0, 0, 0.08);
+    --header-height: 72px; /* altura del header fijo */
+    --header-bg: rgba(255, 255, 255, 0.9);
+    --footer-bg: rgba(245, 245, 245, 0.95);
+    /* colores tipo Bootstrap para botones */
+    --btn-primary: #0b5ed7; /* ajustado para mejor contraste */
+    --btn-info: #0dcaf0;
+    --btn-success: #198754;
+    --btn-secondary: #6c757d;
+    --btn-text-contrast: #ffffff;
+    /* borde de formularios, adaptable a tema */
+    --form-border: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"] {
+    --muted: rgba(255, 255, 255, 0.06);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --header-bg: rgba(15, 23, 32, 0.95);
+    --footer-bg: rgba(10, 14, 20, 0.95);
+    /* ajustar paleta para modo oscuro */
+    --btn-primary: #1e40af; /* más oscuro en tema oscuro para aumentar contraste */
+    --btn-info: #0ec5e8;
+    --btn-success: #16a34a;
+    --btn-secondary: #4b5563;
+    --btn-text-contrast: #ffffff;
+    --form-border: rgba(255, 255, 255, 0.12);
+}

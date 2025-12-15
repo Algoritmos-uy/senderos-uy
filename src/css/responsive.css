@@ -1,13 +1,101 @@
-/* ...existing code... */
 @media (max-width: 900px) {
     .grid-4 {
         grid-template-columns: repeat(2, 1fr);
     }
+    /* Ocultar nav horizontal por defecto y mostrar hamburguesa */
     .main-nav {
         display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: var(--header-bg);
+        padding: 0.75rem 1rem;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     }
+
+    /* cuando se abre, mostrar en bloque */
+    .main-nav[data-open="true"] {
+        display: block;
+    }
+
+    .main-nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 0.6rem 0.75rem;
+    }
+
     .hamburger {
         display: inline-block;
+    }
+
+    /* Header móvil: ocupar 100% y posicionar elementos (navToggle left, themeToggle center, brand right) */
+    .site-header {
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    /* usar posicionamiento absoluto para colocar elementos respecto al header */
+    .header-inner {
+        /* no confiar en el container para el centrado en móvil */
+        justify-content: center;
+    }
+
+    #navToggle {
+        position: absolute;
+        left: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        order: 0;
+        margin-right: 0;
+    }
+
+    /* header-actions debe permanecer estático para que los controles individuales
+       puedan posicionarse respecto a .site-header (contenedor fixed). */
+    .header-actions {
+        position: static;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    /* Posicionar el toggle de tema exactamente en el centro del header */
+    #themeToggle {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1100;
+    }
+
+    .brand {
+        position: absolute;
+        right: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        order: 2;
+    }
+
+    /* En pantallas pequeñas, las acciones de contacto se apilan en columna
+       y los botones ocupan la mayoría del ancho (90%) para facilidad de toque */
+    .contact-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .contact-actions .btn {
+        width: 90%;
+        min-width: 0;
+        max-width: 420px;
+        height: 48px;
+        padding: 0 1rem;
     }
 }
 @media (max-width: 520px) {

@@ -6,17 +6,19 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Senderos Uruguayos</title>
     <link rel="stylesheet" href="src/css/reset.css" />
+    <!-- cargar variables de tema antes de los estilos base -->
+    <link rel="stylesheet" href="src/css/theme.css" />
     <link rel="stylesheet" href="src/css/global.css" />
+    <link rel="stylesheet" href="src/css/components.css" />
     <link rel="stylesheet" href="src/css/sections.css" />
     <link rel="stylesheet" href="src/css/responsive.css" />
-    <link rel="stylesheet" href="src/css/theme.css" />
 </head>
 
 <body>
     <header class="site-header">
         <div class="container header-inner">
             <div class="brand">
-                <img src="assets/img/logo.png" alt="Senderos Uruguayos" class="logo" />
+                <img src="assets/img/hero.png" alt="Senderos Uruguayos" class="logo" />
             </div>
             <nav class="main-nav" id="mainNav" aria-label="Menú principal">
                 <ul>
@@ -28,7 +30,8 @@
             </nav>
             <div class="header-actions">
                 <button id="themeToggle" class="btn icon" aria-label="Cambiar tema">🌓</button>
-                <button id="navToggle" class="btn icon hamburger" aria-label="Abrir menú">☰</button>
+                <button id="navToggle" class="btn icon hamburger" aria-label="Abrir menú" aria-controls="mainNav"
+                    aria-expanded="false">☰</button>
             </div>
         </div>
     </header>
@@ -38,7 +41,7 @@
             <div class="container hero-inner">
                 <h1>Senderos Uruguayos</h1>
                 <p>Turismo de naturaleza: senderismo, observación de aves, paisajes y cascadas.</p>
-                <img src="assets/img/hero.jpg" alt="Senderismo" />
+                <img src="assets/img/hero.png" alt="Senderismo" />
             </div>
         </section>
 
@@ -68,28 +71,28 @@
             <h2>Galería</h2>
             <div class="grid grid-4 grid-wrap">
                 <!-- 8 items -->
-                <figure class="media"><img src="assets/img/gallery1.jpg" alt="">
+                <figure class="media"><img src="https://media.istockphoto.com/id/1305177948/photo/family-with-small-children-hiking-outdoors-in-summer-nature-walking-in-high-tatras.jpg?s=2048x2048&w=is&k=20&c=rjItwk1TXElENcyLGM6fBopLSn6CPnbsDKYqdwF-aQQ=" alt="">
                     <figcaption>Descripción 1</figcaption>
                 </figure>
-                <figure class="media"><img src="assets/img/gallery2.jpg" alt="">
+                <figure class="media"><img src="https://media.istockphoto.com/id/1917023956/photo/happy-woman-with-a-yellow-hiking-backpack-enjoying-the-mountain-landscape.jpg?s=2048x2048&w=is&k=20&c=5nahsW4NRInEZKsXL0CyK9jvd3DmGQj6EBjdVW8kzwA=" alt="">
                     <figcaption>Descripción 2</figcaption>
                 </figure>
-                <figure class="media"><img src="assets/img/gallery3.jpg" alt="">
+                <figure class="media"><img src="https://images.pexels.com/photos/2150347/pexels-photo-2150347.jpeg" alt="">
                     <figcaption>Descripción 3</figcaption>
                 </figure>
-                <figure class="media"><img src="assets/img/gallery4.jpg" alt="">
+                <figure class="media"><img src="https://media.istockphoto.com/id/1369171053/es/foto/grupo-de-deportistas-camina-por-monta%C3%B1as-al-atardecer-con-mochilas.jpg?b=1&s=612x612&w=0&k=20&c=jniwWw6NcuFgSvnoYAKFqckMa78zX9rTDutLjj1xatw=" alt="">
                     <figcaption>Descripción 4</figcaption>
                 </figure>
-                <figure class="media"><img src="assets/img/gallery5.jpg" alt="">
+                <figure class="media"><img src="https://images.pexels.com/photos/35205833/pexels-photo-35205833.jpeg" alt="">
                     <figcaption>Descripción 5</figcaption>
                 </figure>
-                <figure class="media"><img src="assets/img/gallery6.jpg" alt="">
+                <figure class="media"><img src="https://images.pexels.com/photos/35205672/pexels-photo-35205672.jpeg" alt="">
                     <figcaption>Descripción 6</figcaption>
                 </figure>
-                <figure class="media"><img src="assets/img/gallery7.jpg" alt="">
+                <figure class="media"><img src="https://images.pexels.com/photos/35198188/pexels-photo-35198188.jpeg" alt="">
                     <figcaption>Descripción 7</figcaption>
                 </figure>
-                <figure class="media"><img src="assets/img/gallery8.jpg" alt="">
+                <figure class="media"><img src="https://images.pexels.com/photos/6942816/pexels-photo-6942816.jpeg" alt="">
                     <figcaption>Descripción 8</figcaption>
                 </figure>
             </div>
@@ -98,17 +101,17 @@
         <section id="contacto" class="contact container">
             <h2>Contacto</h2>
             <div class="contact-actions">
-                <a class="btn" href="mailto:info@senderos.uy">Email</a>
-                <a class="btn" href="tel:+59890000000">Teléfono</a>
-                <a class="btn" href="https://wa.me/59890000000" target="_blank" rel="noopener">WhatsApp</a>
+                <a class="btn btn-email" href="mailto:info@senderos.uy">Email</a>
+                <a class="btn btn-phone" href="tel:+59890000000">Teléfono</a>
+                <a class="btn btn-whatsapp" href="https://wa.me/59890000000" target="_blank" rel="noopener">WhatsApp</a>
             </div>
 
             <form id="contactForm" class="contact-form" method="post" action="/api/contact">
                 <div class="grid grid-2">
                     <input name="nombre" placeholder="Nombre y apellido" required />
-                    <input name="telefono" placeholder="Teléfono" />
+                    <input name="telefono" placeholder="Teléfono" required />
                     <input name="email" type="email" placeholder="Email" required />
-                    <input name="ciudad" placeholder="Ciudad" />
+                    <input name="ciudad" placeholder="Ciudad" required />
                 </div>
                 <input name="asunto" placeholder="Asunto" required />
                 <textarea name="mensaje" placeholder="Escriba su consulta" rows="6" required></textarea>
@@ -120,8 +123,8 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>© Senderos Uruguayos — Desarrollador: Willans Junes — <a href="https://algoritmos.uy"
-                    target="_blank">algoritmos.uy</a></p>
+            <p>© Senderos Uruguayos — Desarrollador: Willans Junes — <a href="https://algoritmos.uy" target="_blank"
+                    rel="noopener noreferrer">algoritmos.uy</a></p>
         </div>
     </footer>
 

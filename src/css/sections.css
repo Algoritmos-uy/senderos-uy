@@ -1,0 +1,65 @@
+/* sections.css - estilos específicos de secciones: hero, eventos, galería, contacto y footer */
+
+.hero {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* evitar que el header fijo tape los anclajes */
+section {
+    scroll-margin-top: calc(var(--header-height) + 0.5rem);
+}
+
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero img {
+    width: 460px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.events h2,
+.gallery h2,
+.contact h2 {
+    margin-bottom: 1rem;
+}
+
+.media {
+    display: block;
+}
+
+.media figcaption {
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-top: 0.35rem;
+}
+
+.contact-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.site-footer {
+    padding: 1.5rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    background: var(--footer-bg);
+    color: var(--text);
+}
+
+/* small helpers */
+.brand,
+.header-actions {
+    align-items: center;
+}
+.brand .logo {
+    height: 80px;
+}
